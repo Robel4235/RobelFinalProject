@@ -1,0 +1,9 @@
+.leftSide{
+    position: relative;
+    left: 18cm;
+    top: 10px;
+    border-top: 1.5px solid black;
+  border-left:  1.5px solid black;
+  border-right:  1.5px solid black;
+  border-bottom:  1.5px solid black;
+  }

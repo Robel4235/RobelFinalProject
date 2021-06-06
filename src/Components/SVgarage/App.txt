@@ -1,0 +1,77 @@
+import './App.css';
+import React, { useState } from 'react';
+import { Provider } from './ContextApi.js'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import FirstPage from './Components/SVgarage/FirstPage'
+import NewCostumer from './Components/SVgarage/NewCostumer'
+import CostumerPage from './Components/SVgarage/CostumerPage'
+import ProblemHistory from './Components/SVgarage/ProblemHistory'
+
+function App() {
+  const [costumerList,setCostumerList]=useState ([]);
+  const [problemList,setProblemList]=useState([]);
+  const [current,setCurrent]=useState(0);
+  const [startArr,setStartArr]=useState([]);
+  const AddCostumer=(name,id,adress,phone,carNum)=>{
+    let tempCos={Name:name,ID:id,Adress:adress,Phone:phone,CarNum:carNum, problemCode:[]}
+ 
+      let temparr=[];
+      costumerList.map((element)=>(
+          temparr.push(element.ID)
+      ))
+      setStartArr(temparr);
+      let finder=false;
+      for (let i=0; i<costumerList.length;i++){
+        if (costumerList[i].ID==id){
+          finder=true;
+          break;
+        }
+      }
+      if (finder==true){
+        alert('this costumer already exist');
+        return null;
+      }else{
+        costumerList.push(tempCos);
+        setStartArr(temparr);
+        setCostumerList(costumerList);
+      }    
+  }
+
+  const addProblemTOList=(num,desc,time,price)=>{
+    let temp ={ProblemNum:num,Description:desc,FixTime:time,Price:price}
+    let finder =false;
+    for (let i=0;i<problemList.length;i++){
+      if (num==problemList[i].ProblemNum){
+        finder=true;
+        break;
+      }
+    }
+    if (finder==true){
+      alert ("this problem number is already taken, choose another one")
+      return null;
+    }else {
+      problemList.push(temp)
+      costumerList[current].problemCode.push(num);
+      setProblemList(problemList)
+      alert ("problem added to"+ costumerList[current].Name + "list")
+    } 
+  }
+
+  return (
+    <div className="App">    
+      <Provider >
+        <Router>    
+          <Switch>
+          <Route exact path='/' component={() => (<FirstPage costumerList={costumerList} setCurrent={setCurrent} startArr={startArr}  />)} /> 
+          <Route exact path='/newCos' component={() => (<NewCostumer setStartArr={setStartArr} addCostumer={AddCostumer} />  )} />  
+          <Route exact path='/costumerpage' component={() => (<CostumerPage costumerList={costumerList} addProbFunc={addProblemTOList} current={current} problemList={problemList} setProblemList={setProblemList}/>  )} />    
+          <Route exact path='/problemhistory' component={() => (<ProblemHistory costumerList={costumerList} problemList={problemList} current={current} />  )} />  
+  
+          </Switch>
+        </Router>
+      </Provider>
+    </div>
+  );
+}
+
+export default App;
