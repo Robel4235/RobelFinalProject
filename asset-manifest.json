@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/RobelFinalProject/static/css/main.83947714.chunk.css",
+    "main.js": "/RobelFinalProject/static/js/main.0e7d8137.chunk.js",
+    "main.js.map": "/RobelFinalProject/static/js/main.0e7d8137.chunk.js.map",
+    "runtime-main.js": "/RobelFinalProject/static/js/runtime-main.07b0ba14.js",
+    "runtime-main.js.map": "/RobelFinalProject/static/js/runtime-main.07b0ba14.js.map",
+    "static/js/2.6571308b.chunk.js": "/RobelFinalProject/static/js/2.6571308b.chunk.js",
+    "static/js/2.6571308b.chunk.js.map": "/RobelFinalProject/static/js/2.6571308b.chunk.js.map",
+    "static/js/3.69ce5a63.chunk.js": "/RobelFinalProject/static/js/3.69ce5a63.chunk.js",
+    "static/js/3.69ce5a63.chunk.js.map": "/RobelFinalProject/static/js/3.69ce5a63.chunk.js.map",
+    "index.html": "/RobelFinalProject/index.html",
+    "static/css/main.83947714.chunk.css.map": "/RobelFinalProject/static/css/main.83947714.chunk.css.map",
+    "static/js/2.6571308b.chunk.js.LICENSE.txt": "/RobelFinalProject/static/js/2.6571308b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.07b0ba14.js",
+    "static/js/2.6571308b.chunk.js",
+    "static/css/main.83947714.chunk.css",
+    "static/js/main.0e7d8137.chunk.js"
+  ]
+}
